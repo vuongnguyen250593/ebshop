@@ -14,6 +14,6 @@ public interface EBookService {
     EBook updateEBook(Long id, EBook eBookUpdate);
 
     EBook deleteEBook(Long id);
-    Iterable<EBook> findByTitle(String title);
+    Iterable<EBook> findByTitle(String title,String author,String inbs,String publish,Long pri);
 
 }

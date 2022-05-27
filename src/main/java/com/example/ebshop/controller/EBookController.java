@@ -23,22 +23,27 @@ public class EBookController {
     }
 
 
-    @PostMapping ("/create")
+    @PostMapping("/create")
     public ResponseEntity<EBook> createEbook(@RequestBody EBook eBook) {
-         EBook eBooks = eBookService.createEBook(eBook);
+        EBook eBooks = eBookService.createEBook(eBook);
         return new ResponseEntity<>(eBooks, HttpStatus.OK);
     }
 
-    @DeleteMapping ("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<EBook> deleteEbook(@PathVariable Long id) {
         EBook eBooks = eBookService.deleteEBook(id);
         return new ResponseEntity<>(eBooks, HttpStatus.OK);
     }
 
     @PutMapping("/edit/{id}")
-    public ResponseEntity<EBook> editBook(@PathVariable Long id,@RequestBody EBook eBook){
-        EBook eBook1 = eBookService.updateEBook(id,eBook);
-        return  new ResponseEntity<>(eBook1,HttpStatus.OK);
+    public ResponseEntity<EBook> editBook(@PathVariable Long id, @RequestBody EBook eBook) {
+        EBook eBook1 = eBookService.updateEBook(id, eBook);
+        return new ResponseEntity<>(eBook1, HttpStatus.OK);
+    }
+
+    @GetMapping("/search/{param}")
+    public ResponseEntity<Iterable<EBook>> searchBook() {
+        return null;
     }
 
 }

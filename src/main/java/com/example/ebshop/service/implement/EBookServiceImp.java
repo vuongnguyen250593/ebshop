@@ -53,7 +53,8 @@ public class EBookServiceImp implements EBookService {
     }
 
     @Override
-    public Iterable<EBook> findByTitle(String title) {
-        return null;
+    public Iterable<EBook> findByTitle(String title, String author, String inbs, String publish, Long pri) {
+        return eBookRepository.findAllByTitleOrAthorIdOrPublisherIdOrIsbnOrPrice(title,author,inbs,publish,pri);
     }
+
 }
